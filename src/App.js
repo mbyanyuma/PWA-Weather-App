@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import { fetchWeather } from './api/fetchWeather';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [query, setQuery] = useState('');
+
+    return (
+        <div className = "main-container">
+            <input
+                type="text"
+                className="search"
+                placeholder="Search ..."
+                value = {query}
+                onChange = {(e) => setQuery(e.target.value)}
+            />
+        </div>
+    );
 }
 
 export default App;
