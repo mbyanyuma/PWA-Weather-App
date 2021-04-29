@@ -14,19 +14,24 @@ const App = () => {
 
 
             setWeather(data);
+            setQuery('');
         }
     }
 
     return (
         <div className = "main-container">
             <input
-                type="text"
-                className="search"
-                placeholder="Search ..."
-                value = {query}
+                type="text" className="search" placeholder="Search ..." value = {query}
                 onChange = {(e) => setQuery(e.target.value)}
-                onKeyPress = {search}
-            />
+                onKeyPress = {search}        />
+
+                {
+                    weather.main && (
+                        
+                    )
+                }
+
+
         </div>
     );
 }
